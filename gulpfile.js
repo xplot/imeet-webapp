@@ -9,6 +9,7 @@ var options = {
   dist: 'www',
   tmp: '.tmp',
   e2e: 'e2e',
+  platforms: 'platforms',
   errorHandler: function(title) {
     return function(err) {
       gutil.log(gutil.colors.red('[' + title + ']'), err.toString());

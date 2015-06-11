@@ -55,4 +55,8 @@ module.exports = function(options) {
   gulp.task('serve:e2e-dist', ['build'], function () {
     browserSyncInit(options.dist, []);
   });
+  
+  gulp.task('serve:cordova', ['watch:cordova'], function() {
+    browserSyncInit([options.platforms + '/ios/www'], []);
+  });
 };

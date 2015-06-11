@@ -37,4 +37,12 @@ module.exports = function(options) {
       browserSync.reload(event.path);
     });
   });
+  
+  gulp.task('reload:cordova', ['build:cordova'], browserSync.reload);
+  
+  gulp.task('watch:cordova', function() {
+    gulp.watch(options.src + '/**', function(event) {
+      gulp.start('reload:cordova');      
+    });
+  }); 
 };
